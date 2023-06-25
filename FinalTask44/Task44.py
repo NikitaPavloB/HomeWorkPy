@@ -4,6 +4,7 @@
 #  Ваша задача перевести его в one hot вид. Сможете ли вы это сделать без get_dummies?
 
 import pandas as pd
+import random
 
 lst = ['robot'] * 10
 lst += ['human'] * 10
@@ -24,4 +25,10 @@ one_hot_data.loc[:, :] = 0
 for value in unique_values:
     one_hot_data[value] = (data['whoAmI'] == value).astype(int)
 
-one_hot_data.head()
+# Выводим исходный DataFrame
+print("Исходный DataFrame:")
+print(data.head())
+
+# Выводим преобразованный DataFrame в формате One-Hot
+print("\nDataFrame в формате One-Hot:")
+print(one_hot_data.head())
